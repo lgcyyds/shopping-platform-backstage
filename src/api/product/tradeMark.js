@@ -1,0 +1,12 @@
+//品牌管理相关接口
+import request from '@/utils/request'
+export const reqTradeMark = (page, limit) => request({ url: `/admin/product/baseTrademark/${page}/${limit}`, method: 'get' })
+export const reqAddOrUpdateTradeMark = (tradeMark)=>{
+    if (tradeMark.id) {
+        return request({ url: `/admin/product/baseTrademark/update`, method: 'put', data: tradeMark })
+    } else {
+        return request({ url: `/admin/product/baseTrademark/save`, method: 'post', data: tradeMark })
+    }
+}
+export const reqDeleteTradeList=(id)=>request({url:`/admin/product/baseTrademark/remove/${id}`,method:'delete'})
+
