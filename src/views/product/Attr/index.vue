@@ -35,7 +35,7 @@
                     </el-form-item>
                 </el-form>
                 <el-button type="primary" icon="el-icon-plus" @click="addAttrName"
-                    :disabled="AttrInfo.attrName == ''">添加属性名</el-button>
+                    :disabled="AttrInfo.attrName == ''">添加属性值</el-button>
                 <el-button>取消</el-button>
                 <el-table border style="margin: 20px 0px;" :data="AttrInfo.attrValueList">
                     <el-table-column type="index" label="序号" width="100px"></el-table-column>
@@ -124,7 +124,7 @@ export default {
 
         },
         //修改属性
-        updateAttr(row) {
+        updateAttr(row) {            
             this.isShowCard = false
             this.AttrInfo = cloneDeep(row)
             // 点击更改属性时，把数据带过去，但是带过去的属性没有showInput这个属性，直接加的话不是响应式数据
